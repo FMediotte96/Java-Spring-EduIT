@@ -1,0 +1,73 @@
+Spring Framework
+
+Nos proporciona una infraestrutura que actua de soporte para desarrollar aplicaciones Java. 
+Es el "pegamento" que une todos los componente de la aplicación, maneja su ciclo de vida.
+
+Spring cambia las responsabilidades por medio de inversion of Control que lo que realiza es que en vez de que el
+desarrollador sea el encargado de generar los objetos de cada uno de los frameworks.
+
+Modulos de Spring:
+
+Core Container
+Data Access/Integration
+Web
+AOP
+Test
+
+JMX-> Java Management  monitoriza e instrumentaliza cosas de Java, 
+    por ejemplo: limpiar una cache en tiempo real.
+    Investigar
+    Java Management Extensions (JMX) is a Java technology that supplies tools for 
+    managing and monitoring applications, system objects, devices (such as printers) 
+    and service-oriented networks. Those resources are represented by objects called MBeans (for Managed Bean).
+
+
+Inyección de dependencia se busca que las clases sean lo más independientes de otras clases, 
+además que es una implementación de IoC lo que permite que Spring inyecte y construya los objetos por nosotros.
+
+El objetivo es lograr un bajo acoplamientoe entre los objetos en nuestra aplicación.
+
+Los objetos no crean o buscan sus dependencias, sino que estas son sumistradas a través del FW Spring.
+
+IoC: Estilo de programación en el cual un fwk o libreria controla el flujo de un programa. Cambio con 
+respecto a paradigmas tradicionales donde el desarrollador especifica todo el flujo del programa.
+
+Spring es modular solo debemos bajar los modulos que necesitemos.
+
+
+Que es un Bean en Java y que es un bean en Spring?
+
+JAVA
+Un bean se compone de atributos privados
+
+settes y getters publicos
+
+
+Spring framework
+
+Bean Factor
+Aplication context
+
+Ciclo de vida de un Bean en SpringFWK
+
+Spring con anotaciones
+
+Maven vs Gradle Investigar
+
+
+Composicion de objetos, antes de Spring
+
+interface ServicioFacturacion --> ServicioImpresionFacturas
+
+class ServicioFacturacionSimple implements ServicioFacturacion {
+    private ServicioImpresionFacturas servicioImpresionFacturas;
+
+    public ServicioFacturacionSimple(ServicioImpresionFacturas servicioImpresionFacturas) {
+        this.servicioImpresionFacturas = servicioImpresionFacturas;
+    }
+
+    //setter (si o si)
+
+    //getters (opcional)
+}
+
