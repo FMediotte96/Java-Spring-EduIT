@@ -1,0 +1,14 @@
+hacer una clase
+
+@Repository
+JsonMasSQL
+
+Donde 
+	private GrabadorMultaJson
+	private GrabadorMultaSQL
+	
+Que me genere el archivo y me lo inserte en la base
+
+que llame primero a grabar multa en json y luego en sql.
+
+Recordar que esta clase debe implementar GrabadorMulta y estar marcada como Primary

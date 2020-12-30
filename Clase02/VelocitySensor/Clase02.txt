@@ -1,0 +1,31 @@
+Model
+
+value-object que son objetos que solo contienen datos.
+
+En realidad, serian estructuras de datos más que objetos
+
+Spring
+
+Lo primero que hay que saber es que spring es un container de objetos, donde nosotros le vamos
+a llamar servicios
+
+@Bean -> sirve a nivel de método nos permite instanciarlo de diferentes maneras
+@Configuration
+@Component -> marca la clase Java como un Bean o Componente para que Spring pueda agregarla al contexto de la aplicación
+@Services
+@Repository
+@Controller
+@Primary -> para setear un bean del mismo tipo como primario
+@Qualifier -> sirve para identificar el bean a consumir
+
+Application context ofrece toda la funcionalidad del BeanFactory
+
+ApplicationContext, resolución de mensajes, publicación de eventos y el contexto especifico de la capa de especificación.
+
+Lo que va a hacer spring es realizar la inyección de dependencia de una manera automatica, empleando los annotations.
+
+Va a mantener un mapa de los servicios (ApplicationContext)
+
+Cuando hacemos referencia al AC lo que estamos haciendo es utilizar un patron de diseño que se llama serviceLocator.
+
+Service Locator es lo opuesto a inyección de dependencia
