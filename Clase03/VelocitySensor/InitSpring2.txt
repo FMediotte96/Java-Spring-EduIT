@@ -1,0 +1,106 @@
+package edu.educacionit;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+import com.bolivarsoft.sensorclima.SensorClima;
+import com.bolivarsoft.sensorvelocidad.SensorVelocidad;
+
+import edu.educacionit.interfaces.CalculadorCuotas;
+import edu.educacionit.pdf.PresentacionPDF;
+import edu.educacionit.services.EvaluadorMultas;
+import edu.educacionit.services.GrabadorMultaJson;
+import edu.educacionit.services.SensorInEternum;
+import edu.educacionit.sistemaCuotas.SistemaAleman;
+import edu.educacionit.sistemaCuotas.SistemaFrances;
+
+/**
+ * @author fmediotte
+ *
+ */
+@Component
+public class Init implements CommandLineRunner {
+	
+	@Component
+	class Servicio2 {
+		public void ejecutarTb() {
+			System.out.println("Servicio2 ejecutando");
+		}
+	}
+	
+	@Component
+	class Servicio1 {
+		Servicio2 servicio2;
+		
+		public Servicio1(Servicio2 servicio2) {
+			this.servicio2 = servicio2;
+		}
+
+		public void ejecutar() {
+			System.out.println("Hola desde servicio 1");
+			servicio2.ejecutarTb();
+		}
+	}
+	
+	class ServicioA {
+		private String mensaje;
+
+		public ServicioA(String mensaje) {
+			this.mensaje = mensaje;
+		}
+		
+		public void ejecutar() {
+			System.out.println("Mensaje: " + mensaje);
+		}
+	}
+	
+	private static SensorInEternum factory() {
+		return new SensorInEternum(
+				new SensorClima(), 
+				new SensorVelocidad(), 
+				new EvaluadorMultas(new GrabadorMultaJson())
+			);
+	}
+	
+	@Autowired
+	ApplicationContext applicationContext;
+	
+	@Autowired
+	Servicio1 servicio1;
+	
+	@Bean("PDF_Frances")
+	PresentacionPDF generarPresentacionFrances() {
+		return new PresentacionPDF(new SistemaFrances());
+	}
+	
+	@Bean("PDF_Aleman")
+	PresentacionPDF generarPresentacionAleman() {
+		return new PresentacionPDF(new SistemaAleman());
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		//factory().sensar();
+		//servicio1.ejecutar();
+		PresentacionPDF presentacionPDF = null;
+		
+		if(args[0].equals("frances")) {
+			presentacionPDF = applicationContext.getBean("PDF_Frances", PresentacionPDF.class);
+		}
+		
+		if(args[0].equals("aleman")) {
+			presentacionPDF = applicationContext.getBean("PDF_Aleman", PresentacionPDF.class);
+		}
+		
+		if(presentacionPDF != null) {
+			presentacionPDF.enviarPdf();
+		}
+	}
+	
+}

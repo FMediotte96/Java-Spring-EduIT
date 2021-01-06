@@ -1,0 +1,12 @@
+{
+	"idTicket": "fe9bdd33-9d5c-4059-a251-6ba90e0605b3",
+	"fechaYHora": 16086851405,
+	"datosVehiculo": {
+		"patente": "AL 474 SA",
+		"tipoVehiculo": "Tractor",
+		"velocidadMedida": 103
+	},
+	"situacionClimatologica": "LLUVIAS_TORRENCIALES",
+	"limiteVelocidadPermitido": 100,
+	"limiteMedido": 103
+}

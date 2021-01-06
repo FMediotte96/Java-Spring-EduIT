@@ -1,0 +1,17 @@
+AOP: programaci�n orientada a aspectos
+
+Aspect extensi�n de Java para lo que la programaci�n orientada a aspectos
+
+@interface
+
+update a nivel de base de datos
+
+Arquitectura Inmutable
+
+CQRS Command Query Responsability segregration
+
+Almacen de datos  ------> SQL ------> Elastic Search
+										Redis
+										MongoDB
+										
+@Around se ejecuta antes y despues de la expresión point
