@@ -1,0 +1,5 @@
+curl -> de linux, investigar
+@RequestMapping -> permite ponerle method para definir el tipo de peticion http que es
+@ResponseStatus -> se puede indicar el response de la petición pasandole como parametro un HttpStatus
+
+cdn libraries uuid -> uuid.v4() en consola
