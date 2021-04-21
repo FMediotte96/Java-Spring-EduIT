@@ -1,2 +1,3 @@
-# Java-Spring-EduIT
-Proyectos Java Spring - EducacionIT
+# Curso Java Spring EducacionIT
+
+Link: https://www.educacionit.com/curso-de-java-spring
