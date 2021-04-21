@@ -20,7 +20,7 @@ public class GrabadorMultaJson implements GrabadorMulta {
 		System.out.println("Grabando ticket en formato JSON");
 		
 		try {
-			String nomArch = String.join("", "/tickets/", t.getIdTicket(), ".json");
+			String nomArch = String.join("", "./tickets/", t.getIdTicket(), ".json");
 			File arch = new File(nomArch);
 			Gson gson = new Gson();
 			String strJson = gson.toJson(t);
