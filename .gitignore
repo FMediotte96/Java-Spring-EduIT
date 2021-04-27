@@ -2,4 +2,7 @@
 *.prefs
 *.class
 .idea
+.classpath
+.project
+.gitignore
 

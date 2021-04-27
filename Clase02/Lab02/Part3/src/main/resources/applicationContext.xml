@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+   - name:        applicationContext.xml
+   - description: Spring application context.
+   - author:      Raul Pena (raul.pena@hotmail.com)
+   -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                       http://www.springframework.org/schema/beans/spring-beans.xsd 
+	                       http://www.springframework.org/schema/aop 
+	                       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--
+	   - Add beans resources. 
+	   -->
+    <bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>
+
+    <bean id="operationBean" class="com.educacionit.spring.beginning.class02.aspectj.Operation"/>
+    <bean id="trackMyBean" class="com.educacionit.spring.beginning.class02.aspectj.TrackOperation"/>
+
+</beans>

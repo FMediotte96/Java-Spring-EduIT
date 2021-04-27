@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+   - name:        applicationContext5.xml
+   - description: Spring application context.
+   - author:      Raul Pena (raul.pena@hotmail.com)
+   -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                       http://www.springframework.org/schema/beans/spring-beans.xsd 
+	                       http://www.springframework.org/schema/aop 
+	                       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--
+	   - Add beans resources. 
+	   -->
+
+    <!-- Enable AspectJ style of Spring AOP -->
+    <aop:aspectj-autoproxy/>
+
+    <!-- Configure Employee Bean and initialize it -->
+    <bean name="employee" class="com.educacionit.spring.beginning.class02.model.Employee">
+        <property name="name" value="Dummy Name"/>
+    </bean>
+
+    <!-- Configure EmployeeService bean -->
+    <bean name="employeeService" class="com.educacionit.spring.beginning.class02.service.EmployeeService">
+        <property name="employee" ref="employee"/>
+    </bean>
+
+
+    <!-- Configure Aspect Beans, without this Aspects advices wont execute -->
+    <bean name="employeeAspect" class="com.educacionit.spring.beginning.class02.aspect.EmployeeAspect"/>
+    <bean name="employeeAspectPointcut" class="com.educacionit.spring.beginning.class02.aspect.EmployeeAspectPointcut"/>
+    <bean name="employeeAspectJoinPoint"
+          class="com.educacionit.spring.beginning.class02.aspect.EmployeeAspectJoinPoint"/>
+    <bean name="employeeAfterAspect" class="com.educacionit.spring.beginning.class02.aspect.EmployeeAfterAspect"/>
+    <bean name="employeeAroundAspect" class="com.educacionit.spring.beginning.class02.aspect.EmployeeAroundAspect"/>
+    <bean name="employeeAnnotationAspect"
+          class="com.educacionit.spring.beginning.class02.aspect.EmployeeAnnotationAspect"/>
+    <bean name="employeeXMLConfigAspect"
+          class="com.educacionit.spring.beginning.class02.aspect.EmployeeXMLConfigAspect"/>
+
+
+    <!-- Spring AOP XML Configuration -->
+    <aop:config>
+        <aop:aspect ref="employeeXMLConfigAspect" id="employeeXMLConfigAspectID" order="1">
+            <aop:pointcut expression="execution(* com.educacionit.spring.beginning.class02.model.Employee.getName())"
+                          id="getNamePointcut"/>
+            <aop:around method="employeeAroundAdvice" pointcut-ref="getNamePointcut" arg-names="proceedingJoinPoint"/>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>
