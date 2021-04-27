@@ -1,0 +1,153 @@
+<!-- 
+   - name: pom.xml
+   - description: maven pom.
+   - author: Raul Peña
+   -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	                http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    
+    
+    <!-- 
+       - POM setup declarations.
+       --> 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.educacionit.spring</groupId>
+  <artifactId>beginning-class03-4</artifactId>
+    <version>1.0.0</version>
+  <name>spring.beginning-class03-4</name>
+  <description>Java Education Project for learn Springframework.</description>
+	
+	
+	
+	<!-- 
+       - Programmer info.
+       -->
+	<developers>
+        <developer>
+		    <id>raul.g.pena</id>
+		    <name>Raul Peña</name>
+		    <email>raul.pena@hotmail.com</email>
+		</developer>
+    </developers>
+	
+	
+	
+	<!-- 
+       - Properties declarations.
+       -->
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>4.3.5.RELEASE</spring.version>
+	</properties>
+    
+    
+    
+    
+    
+   
+	
+	
+	<!-- 
+       - Setup dependency.
+       -->
+    <!-- 
+       - Setup dependency.
+       -->
+	<dependencies>
+	    
+	   <!--
+           - Compile dependencies. (Thirds)
+           -->
+        
+        <!-- 
+           - Spring.
+           -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <scope>compile</scope>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <scope>compile</scope>
+            <version>${spring.version}</version>
+        </dependency>   
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <scope>compile</scope>
+            <version>${spring.version}</version>
+        </dependency>   
+        
+        
+        <!-- 
+           - Others.
+           -->
+        <dependency>
+            <groupId>commons-daemon</groupId>
+            <artifactId>commons-daemon</artifactId>
+            <scope>compile</scope>
+            <version>1.0.15</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>compile</scope>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <scope>compile</scope>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>compile</scope>
+            <version>9.1-901.jdbc4</version>
+        </dependency>
+	</dependencies>       
+       
+    
+	
+	<!-- 
+       - Build optiones.
+       -->
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>                    
+                    <packagingExcludes>${basedir}/src/integrationTest</packagingExcludes>
+                    <packagingExcludes>${basedir}/src/test</packagingExcludes>
+                    <archive>
+                        <manifestFile>
+                          src/main/resources/META-INF/MANIFEST.MF
+                        </manifestFile>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>                       
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>  
+    </build>
+        	
+    
+    
+</project>

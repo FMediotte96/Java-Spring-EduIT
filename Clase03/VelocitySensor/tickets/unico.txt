@@ -1,0 +1,52 @@
+"NORMAL"
+{"patente":"AK 788 CH","tipoVehiculo":"Auto","velocidadMedida":90}
+"NORMAL"
+{"patente":"AQ 603 MW","tipoVehiculo":"Auto","velocidadMedida":80}
+"NORMAL"
+{"patente":"AW 747 GQ","tipoVehiculo":"Tractor","velocidadMedida":132}
+"NORMAL"
+{"patente":"AO 243 AI","tipoVehiculo":"Auto","velocidadMedida":54}
+"NORMAL"
+{"patente":"AS 390 SG","tipoVehiculo":"Auto","velocidadMedida":97}
+"NORMAL"
+{"patente":"AA 684 FD","tipoVehiculo":"Tractor","velocidadMedida":106}
+"NORMAL"
+{"patente":"AC 790 RS","tipoVehiculo":"Auto","velocidadMedida":61}
+"NORMAL"
+{"patente":"AI 294 SL","tipoVehiculo":"Moto","velocidadMedida":124}
+"NORMAL"
+{"patente":"AL 673 HR","tipoVehiculo":"Auto","velocidadMedida":91}
+"NORMAL"
+{"patente":"AI 260 FJ","tipoVehiculo":"Tractor","velocidadMedida":113}
+"NORMAL"
+{"patente":"AV 295 RP","tipoVehiculo":"Camion","velocidadMedida":53}
+"NORMAL"
+{"patente":"AW 415 UM","tipoVehiculo":"Tractor","velocidadMedida":105}
+"NORMAL"
+{"patente":"AT 355 VM","tipoVehiculo":"Tractor","velocidadMedida":92}
+"NORMAL"
+{"patente":"AM 092 AP","tipoVehiculo":"Auto","velocidadMedida":65}
+"NORMAL"
+{"patente":"AO 553 GQ","tipoVehiculo":"Moto","velocidadMedida":93}
+"NORMAL"
+{"patente":"AT 133 TE","tipoVehiculo":"Moto","velocidadMedida":100}
+"NORMAL"
+{"patente":"AB 687 FE","tipoVehiculo":"Camion","velocidadMedida":67}
+"NORMAL"
+{"patente":"AD 451 JG","tipoVehiculo":"Auto","velocidadMedida":53}
+"NORMAL"
+{"patente":"AD 714 PF","tipoVehiculo":"Camion","velocidadMedida":69}
+"NORMAL"
+{"patente":"AX 042 SR","tipoVehiculo":"Camion","velocidadMedida":33}
+"NORMAL"
+{"patente":"AV 042 AV","tipoVehiculo":"Camion","velocidadMedida":34}
+"NORMAL"
+{"patente":"AU 210 RE","tipoVehiculo":"Auto","velocidadMedida":75}
+"NORMAL"
+{"patente":"AU 477 DW","tipoVehiculo":"Auto","velocidadMedida":90}
+"NORMAL"
+{"patente":"AX 030 OJ","tipoVehiculo":"Tractor","velocidadMedida":125}
+"NORMAL"
+{"patente":"AP 764 HE","tipoVehiculo":"Moto","velocidadMedida":100}
+"NORMAL"
+{"patente":"AR 485 BW","tipoVehiculo":"Tractor","velocidadMedida":97}

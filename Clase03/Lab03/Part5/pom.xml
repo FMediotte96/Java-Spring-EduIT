@@ -1,0 +1,219 @@
+<!-- 
+   -
+   - Name: pom.xml
+   - Description: Maven setup file.
+   - Author: Raul Pena (raul.pena@hotmail.com)
+   -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    
+    
+    <!-- 
+       - POM setup declarations.
+       --> 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.educacionit.spring</groupId>
+  <artifactId>beginning-class03-2</artifactId>
+    <version>1.0.0</version>
+  <name>spring.beginning-class03-2</name>
+  <description>Java Education Project for learn Springframework.</description>
+	
+	
+	
+	<!-- 
+       - Properties declarations.
+       -->
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>4.3.5.RELEASE</spring.version>
+	</properties>
+	
+	
+	
+	<!--
+       - Developer information.
+       -->
+    <developers>
+        <developer>
+        <id>raul.g.pena</id>
+        <name>Raul Pena</name>
+        <email>raul.pena@hotmail.com</email>
+    </developer>
+    </developers>
+    
+    
+    
+    <!-- 
+       - Define POM parents.
+       -->
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.3.RELEASE</version>
+    </parent>     
+      
+    
+    
+    <!-- 
+       - Setup dependency.
+       -->
+	<dependencies>
+
+        <!--
+           - Test dependencies. (Thirds)
+           -->
+
+        <!--
+           - JUnit.
+           -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--
+           - Spring.
+           -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--
+           - slf4j.
+           -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
+        <!--
+           - Compile dependencies. (Thirds)
+           -->
+       
+        <!-- 
+           - Spring.
+           -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<scope>provided</scope>
+		</dependency>
+        
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<scope>provided</scope>
+		</dependency>
+        
+        <!-- 
+           - J2EE.
+           -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- 
+           -  Apache commons.
+           -->
+        <dependency>
+            <groupId>commons-daemon</groupId>
+            <artifactId>commons-daemon</artifactId>
+            <scope>provided</scope>
+            <version>1.0.15</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        
+	</dependencies>
+    
+   	
+	
+	<!-- 
+       - Build optiones.
+       -->
+    <build>
+        <plugins>
+            <plugin>
+    			<groupId>org.codehaus.mojo</groupId>
+    			<artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
+    			<executions>
+      				<execution>
+        				<id>add-test-source</id>
+        				<phase>process-resources</phase>
+        				<goals>
+          					<goal>add-test-source</goal>
+        				</goals>
+        				<configuration>
+	          				<sources>
+	            			    <source>src/integrationTest/java</source>
+	            			    <source>src/integrationTest/resources</source>
+	          				</sources>
+        				</configuration>
+      				</execution>
+    			</executions>
+  			</plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifestFile>
+                          src/main/resources/META-INF/MANIFEST.MF
+                        </manifestFile>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Sealed>true</Sealed>
+                            <mode>development</mode>
+                            <url>http://www.rastreourbano.com/</url>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+        	
+    
+    
+</project>

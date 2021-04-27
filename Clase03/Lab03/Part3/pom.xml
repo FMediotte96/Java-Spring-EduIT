@@ -1,0 +1,244 @@
+<!-- 
+   - name: pom.xml
+   - description: maven pom.
+   - author: Raul Peña
+   -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	                http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    
+    
+    <!-- 
+       - POM setup declarations.
+       --> 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.educacionit.spring</groupId>
+  <artifactId>beginning-class03-3</artifactId>
+    <version>1.0.0</version>
+  <name>spring.beginning-class03-3</name>
+  <description>Java Education Project for learn Springframework.</description>
+	
+	
+	
+	<!-- 
+       - Programmer info.
+       -->
+	<developers>
+        <developer>
+		    <id>raul.g.pena</id>
+		    <name>Raul Peña</name>
+		    <email>raul.pena@hotmail.com</email>
+		</developer>
+    </developers>
+	
+	
+	
+	<!-- 
+       - Properties declarations.
+       -->
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>4.3.5.RELEASE</spring.version>
+	</properties>
+    
+    
+    
+    <!-- 
+       - Define POM parents.
+       -->
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.3.RELEASE</version>
+    </parent>     
+    
+    
+   
+	
+	
+	<!-- 
+       - Setup dependency.
+       -->
+    <!-- 
+       - Setup dependency.
+       -->
+	<dependencies>
+	    
+	    <!--
+           - Test dependencies. (Thirds)
+           -->
+        
+        <!-- 
+           - Spring.
+           -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>           
+        
+        <!--
+           - JUnit.
+           -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <!--
+           - Mockito.
+           -->
+        <dependency>
+            <groupId>com.mockrunner</groupId>
+            <artifactId>mockrunner-core</artifactId>
+            <scope>test</scope>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mockrunner</groupId>
+            <artifactId>mockrunner-jms</artifactId>
+            <scope>test</scope>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <scope>test</scope>
+            <version>1.10.19</version>
+        </dependency>   
+        
+        
+        
+        <!--
+           - Compile dependencies. (Thirds)
+           -->
+        
+        <!-- 
+           - Spring.
+           -->
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>compile</scope>
+		</dependency>
+        
+        <!-- 
+           - J2EE.
+           -->
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>el-api</artifactId>
+            <scope>compile</scope>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.el</groupId>
+            <artifactId>el-ri</artifactId>
+            <scope>compile</scope>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        
+        
+        <!-- 
+           - Others.
+           -->
+        <dependency>
+            <groupId>commons-daemon</groupId>
+            <artifactId>commons-daemon</artifactId>
+            <scope>compile</scope>
+            <version>1.0.15</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>compile</scope>
+            <version>9.1-901.jdbc4</version>
+        </dependency>
+       
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <scope>compile</scope>
+            <version>0.9.5.2</version>
+        </dependency>
+	</dependencies>       
+       
+    
+	
+	<!-- 
+       - Build optiones.
+       -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>                    
+                    <packagingExcludes>${basedir}/src/integrationTest</packagingExcludes>
+                    <packagingExcludes>${basedir}/src/test</packagingExcludes>
+                    <archive>
+                        <manifestFile>
+                          src/main/resources/META-INF/MANIFEST.MF
+                        </manifestFile>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>                       
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>  
+    </build>
+        	
+    
+    
+</project>

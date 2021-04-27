@@ -34,7 +34,7 @@ public class AspectoLoggeable {
 					.append(System.lineSeparator());
 		}
 		FileUtils.writeStringToFile(
-				new File("/tickets/unico.txt"), 
+				new File("./tickets/unico.txt"),
 				strParam.toString(), 
 				"UTF-8",
 				true);
